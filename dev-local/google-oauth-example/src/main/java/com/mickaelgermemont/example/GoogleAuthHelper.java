@@ -87,6 +87,9 @@ public final class GoogleAuthHelper {
 		final Credential credential = flow.createAndStoreCredential(response, null);
 		final HttpRequestFactory requestFactory = HTTP_TRANSPORT.createRequestFactory(credential);
 
+		System.out.print("getAccessToken=");
+		System.out.println(credential.getAccessToken());
+		
 		// Make an authenticated request
 		final GenericUrl url = new GenericUrl(USER_INFO_URL);
 		final HttpRequest request = requestFactory.buildGetRequest(url);

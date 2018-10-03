@@ -10,7 +10,7 @@ RUN keytool -genkey -noprompt \
  -storepass "ebx tomcat password" \
  -keypass "ebx tomcat password"
 
-COPY dev-local/google-oauth-example/target/google-oauth-example-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/google-oauth-example.war
+COPY dev-local/google-oauth-example/target/google-oauth-example.war /usr/local/tomcat/webapps/
 COPY server.xml /usr/local/tomcat/conf/server.xml
 
 EXPOSE 8080

@@ -20,18 +20,19 @@ docker build -t tomcat-oauth-google .
 ## start app
 
 ```
-docker run -p 8843:8843 tomcat-oauth-google
+docker run --rm -p 8843:8843 --name tomcat_oauth_google tomcat-oauth-google
 ```
 
 open browser at https://localhost:8843/google-oauth-example
 
-## debug docker image
+## start container and use command-line
 
 ```
-docker run -it tomcat-oauth-google bash
+docker run --rm -it tomcat-oauth-google bash
 ```
 
+## connect to running container
+
 ```
-docker ps # find your container name
-docker exec -it goofy_hopper /bin/bash
+docker exec -it tomcat_oauth_google /bin/bash
 ```
